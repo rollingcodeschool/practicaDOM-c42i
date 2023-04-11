@@ -1,6 +1,9 @@
 let botonVerMas = document.getElementById("btnVerMas");
+let formulario = document.querySelector('form');
+
 // agregar un manejador de eventos
 botonVerMas.addEventListener("click", verMas);
+formulario.addEventListener('submit', obtenerDato)
 // si tengo que enviar argumentos
 // botonVerMas.addEventListener('click', ()=>{ verMas(param1,param2)});
 
@@ -54,4 +57,14 @@ in velit minima, minus quidem iusto ex autem tempora laudantium?`;
     botonVerMas.innerHTML = "Ver mas";
     botonVerMas.className = "btn btn-primary";
   }
+}
+
+function obtenerDato(e){
+  e.preventDefault();
+  console.log('ejecutando el evento submit del formulario');
+  let input = document.querySelector('input');
+  console.log(typeof input);
+  console.log(input.value);
+  //resetear los datos de un formulario
+  formulario.reset();
 }
